@@ -1,0 +1,12 @@
+Checks: >
+  -*,
+  bugprone-*,
+  concurrency-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*
+WarningsAsErrors: ''
+HeaderFilterRegex: 'include/cpp_thread_pool/.*'
+FormatStyle: file
+
