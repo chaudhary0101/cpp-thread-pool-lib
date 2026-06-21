@@ -84,7 +84,7 @@ void TaskScheduler::run() {
         lock.lock();
 
         if (accepted && task.interval.count() > 0 && !stopping_ &&
-            cancelled_.find(task.id) == cancelled_.end()) {
+            !cancelled_.contains(task.id)) {
             task.due = Clock::now() + task.interval;
             task.sequence = next_sequence_++;
             tasks_.push(std::move(task));

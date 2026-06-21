@@ -24,7 +24,7 @@ bool TaskQueue::wait_pop(Task& task, const std::function<bool()>& should_stop) {
     if (should_stop() || (closed_ && tasks_.empty())) {
         return false;
     }
-    task = tasks_.top();
+    task = std::move(const_cast<Task&>(tasks_.top()));
     tasks_.pop();
     return true;
 }
