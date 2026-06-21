@@ -1,0 +1,33 @@
+name: Bug report
+description: Report incorrect behavior, a race, or a lifecycle issue
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Explain the observed and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Minimal reproducer
+      description: Include the smallest complete C++ example that triggers the issue.
+      render: cpp
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Compiler, version, CMake version, Linux distribution, and CPU.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Add GDB, Valgrind, sanitizer, or thread dump output.
+
