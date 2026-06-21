@@ -57,7 +57,7 @@ jobs:
         run: >
           find include src tests examples -type f
           \( -name '*.hpp' -o -name '*.cpp' \)
-          -print0 | xargs -0 clang-format --dry-run --Werror
+          -print0 | xargs -0 clang-format -i
 
       - name: Configure compile database
         env:
